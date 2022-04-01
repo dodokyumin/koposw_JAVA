@@ -1,8 +1,6 @@
-package A2_006;
-
 import java.util.Scanner;
 
-public class Main {
+public class standardDeviation {
 
 	static int sum = 0;
 	static double mean, median, variance, standardDeviation;
