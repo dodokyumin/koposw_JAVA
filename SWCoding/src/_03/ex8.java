@@ -40,7 +40,7 @@ public class ex8 {
 		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 달러당 수수료: %f원\n",k44_i_totalcom, k44_usd, k44_ComPerOne);
 		
 		k44_remain = (int) (k44_MyWon - k44_usd *k44_MoneyEx - k44_i_totalcom);
-		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 수수료청구: %d원 잔돈:ㅣ %d원\n", k44_MyWon, k44_usd,k44_i_totalcom, k44_remain);
+		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 수수료징구: %d원 잔돈:ㅣ %d원\n", k44_MyWon, k44_usd,k44_i_totalcom, k44_remain);
 		System.out.printf("*******************************************\n\n\n");
 		
 		
@@ -58,7 +58,7 @@ public class ex8 {
 		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 달러당 수수료: %f원\n",k44_i_totalcom, k44_usd, k44_ComPerOne);
 		
 		k44_remain = (int) (k44_MyWon - k44_usd *k44_MoneyEx - k44_i_totalcom);
-		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 수수료청구: %d원 잔돈:ㅣ %d원\n", k44_MyWon, k44_usd,k44_i_totalcom, k44_remain);
+		System.out.printf("총 수수료 : %d원 => 미화: %d달러, 수수료징구: %d원 잔돈:ㅣ %d원\n", k44_MyWon, k44_usd,k44_i_totalcom, k44_remain);
 		System.out.printf("*******************************************\n\n\n");
 		
 		
@@ -72,7 +72,7 @@ public class ex8 {
 				k44_ComPerOne);
 		
 		k44_remain = (int) (k44_MyWon - k44_usd *k44_MoneyEx - k44_i_totalcom);
-		System.out.printf("총 수수료 : %s원 => 미화: %s달러, 수수료청구: %s원 잔돈:ㅣ %s원\n", 
+		System.out.printf("총 수수료 : %s원 => 미화: %s달러, 수수료징구: %s원 잔돈:ㅣ %s원\n", 
 				df.format(k44_MyWon),
 				df.format(k44_usd),
 				df.format(k44_i_totalcom),
