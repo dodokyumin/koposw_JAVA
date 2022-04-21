@@ -19,7 +19,7 @@ public class ReportSheet {
 
 		for(int k44_i=0; k44_i<k44_iPerson; k44_i++) { //위에서 저장한 데이타들을 사람의 수만큼 돌려 각 항목의 배열에 접근하여 리스트를 뽑는다.
 			System.out.printf("번호:%d, 이름:%s, 국어:%d, 영어:%d, 수학:%d, 총점:%d, 평균:%f\n",
-					k44_i, k44_inData.k44_name[k44_i], k44_inData.k44_kor[k44_i], k44_inData.k44_eng[k44_i], k44_inData.k44_mat[k44_i], k44_inData.k44_sum[k44_i], k44_inData.k44_ave[k44_i]);
+					k44_i, k44_inData.k44_name[k44_i], k44_inData.k44_kor[k44_i], k44_inData.k44_eng[k44_i], k44_inData.k44_mat[k44_i], k44_inData.k44_sum[k44_i],(k44_inData.k44_ave[k44_i]));
 		}
 		
 	}

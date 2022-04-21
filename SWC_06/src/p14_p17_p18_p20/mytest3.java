@@ -13,8 +13,8 @@ public class mytest3 {
 				System.out.printf("MSG elev[%s]\n", k44_elev3.k44_help);
 			}
 			
-			for (int i=0; i<10; i++) {	//10번만큼 elev3인스턴스의 up함수를 호출.
-				k44_elev3.k44_up();
+			for (int i=0; i<10; i++) {	//10번만큼 elev3인스턴스의 down함수를 호출.
+				k44_elev3.k44_down();
 				System.out.printf("MSG elev[%s]\n", k44_elev3.k44_help);
 			}
 			

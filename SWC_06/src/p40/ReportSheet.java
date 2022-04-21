@@ -6,7 +6,7 @@ public class ReportSheet {
 
 	public static void main(String[] args) {
 		
-		int k44_iPerson = 10;	//사람 수 설정하기
+		int k44_iPerson = 20;	//사람 수 설정하기
 		
 		k44_InputData k44_inData = new k44_InputData(k44_iPerson);//InputData클래스를 받아 새로운 inData인스턴스를 생성한다.
 		

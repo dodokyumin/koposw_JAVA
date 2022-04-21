@@ -4,8 +4,8 @@ public class ReportSheet {
 
 	public static void main(String[] args) {
 
-		int k44_iPerson = 200; // 전체 인원수 설정하기
-		int k44_iPages = 30; // 한 페이지당 출력할 인원 수 설정하기
+		int k44_iPerson = 12; // 전체 인원수 설정하기
+		int k44_iPages = 11; // 한 페이지당 출력할 인원 수 설정하기
 		int k44_amountPage = k44_iPerson / k44_iPages; // 전체인원을 페이지로 나눈값 즉, 페이지 수
 
 		InputData inData = new InputData(k44_iPerson, k44_amountPage, k44_iPages); // InputData클래스의 인스턴스 inData설정

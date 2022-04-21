@@ -26,7 +26,7 @@ public class k44_InputData {
 		this.k44_eng[k44_i] = k44_eng;
 		this.k44_mat[k44_i] = k44_mat;
 		this.k44_sum[k44_i] = k44_kor + k44_eng + k44_mat;
-		this.k44_ave[k44_i] = k44_sum[k44_i]/3;
+		this.k44_ave[k44_i] = (float)((k44_sum[k44_i])/3.0);
 		
 	}
 }
