@@ -68,14 +68,14 @@ public class p82 {
 			System.out.printf(" %s : %s\n", k44_field_name[9], k44_addressMin);	//항목의 9번째 데이터가 지번 주소이다.
 			System.out.printf(" %s : %s\n", k44_field_name[13], k44_longiMin);	//12번 : 위도주소
 			System.out.printf(" %s : %s\n", k44_field_name[14],k44_latiMin);	// : 경도주소
-			System.out.printf(" 현재지점과의 거리 : %f\n",k44_distMin);
+			System.out.printf(" 현재지점과의 거리 : %fm\n",k44_distMin*100000);
 			System.out.printf("****************************\n");
 			
 			System.out.printf("\n**[%d번째 항목(최장거리)]*************\n",k44_cntMax);
 			System.out.printf(" %s : %s\n", k44_field_name[9], k44_addressMax);	//항목의 9번째 데이터가 지번 주소이다.
 			System.out.printf(" %s : %s\n", k44_field_name[13], k44_longiMax);	//13번 : 위도주소
 			System.out.printf(" %s : %s\n", k44_field_name[14], k44_latiMax);	//14번: 경도주소
-			System.out.printf(" 현재지점과의 거리 : %f\n",k44_distMax);
+			System.out.printf(" 현재지점과의 거리 : %fm\n",k44_distMax*100000);
 			System.out.printf("****************************\n");
 			
 		
