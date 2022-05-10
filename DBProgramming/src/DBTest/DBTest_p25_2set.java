@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBTest_p19 {
+public class DBTest_p25_2set {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
@@ -14,6 +14,7 @@ public class DBTest_p19 {
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//Class.forName()을 통해 드라이버를 로드한다.
+		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.89:33060/koposw44", "root", "koposw44");
 		//드라이버 매니저의 getConnection 메소드로 인자(mysql경로,id,pwd)를 보내어 DB에 연결한다.																										  
 		//연결 완료한 설정을 인스턴스 conn에 담아 구조화 한다.
@@ -21,11 +22,17 @@ public class DBTest_p19 {
 		Statement stmt = conn.createStatement();
 		//conn의 createStatement 메소드를 Query 작업을 실행하기 위한 Statement형 인스턴스에 담아 정적인 쿼리를 처리할 수 있게 한다.
 		
-		stmt.execute("delete from examtable01");
+		stmt.execute( "create table thousandReport("+
+				"studentid int not null primary key,"+	//학번
+				"name varchar(20),"+					//이름
+				"kor int,"+								//국어점수
+				"eng int,"+								//영어점수
+				"mat int);");							//수학점수
 		//쿼리 실행문을 담은 string을 stmt의 실행메소드 execute에 담아 mysql명령을 실행한다.
+		//이때 studentid는 중복값이 없는 primary key로 설정하였다.
 		
-		stmt.close();//열었던 stmt을 닫아주어 메모리 확보.
-		conn.close();//열었던 conn을 닫아주어 메모리 확보.
+		stmt.close(); //열었던 stmt을 닫아주어 메모리 확보.
+		conn.close(); //열었던 conn을 닫아주어 메모리 확보.
 	}
 
 }
