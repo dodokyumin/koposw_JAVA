@@ -17,7 +17,7 @@ public class DBTest_p23 {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//Class.forName()을 통해 드라이버를 로드한다.
 		
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.89:33060/koposw44", "root", "koposw44");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.89:33062/koposw44", "root", "koposw44");
 		//드라이버 매니저의 getConnection 메소드로 인자(mysql경로,id,pwd)를 보내어 DB에 연결한다.
 		//연결 완료한 설정을 인스턴스 conn에 담아 구조화 한다.
 		
@@ -41,8 +41,8 @@ public class DBTest_p23 {
 		}
 		
 		
-//		String[] field_name = readtxt.split("\t");
-//		int LineCnt = 0;
+		String[] field_name = readtxt.split("\t");
+		int LineCnt = 1;
 	
 		while ((readtxt = br.readLine()) != null) {
 		//만약 버퍼리더로 읽어온 라인을 저장한 readtxt가 null이 아니라면, 즉 값이 있다면,
@@ -228,17 +228,19 @@ public class DBTest_p23 {
 			//date형식에 맞게 포맷팅하여주었다.
 			
 			QueryTxt = String.format("insert into freewifi ("
+					+ "num,"
 					+ "inst_place, inst_place_detail, inst_city, inst_country, inst_place_flag,"
 					+ "service_provider, wifi_ssid, inst_date, place_addr_road, place_addr_land,"
 					+ "manage_office, manage_office_phone, latitude, longitude, write_date)" + "values ("
-					+ "'%s', '%s', '%s', '%s', '%s'," + "'%s', '%s', '%s', '%s', '%s'," + "'%s', '%s', %s, %s, '%s');",
+					+ "'%d','%s', '%s', '%s', '%s', '%s'," + "'%s', '%s', '%s', '%s', '%s'," + "'%s', '%s', %s, %s, '%s');",
+					LineCnt,
 					field[0], field[1], field[2], field[3], field[4], field[5], field[6], field[7], field[8], field[9],
 					field[10], field[11], field[12], field[13], field[14]);
 			//쿼리 실행문을 String.format에 담아 String변수에 저장한다.
 			
 			stmt.execute(QueryTxt);
 			//쿼리 실행문을 담은 string을 stmt의 실행메소드 execute에 담아 mysql명령을 실행한다.
-//			LineCnt++;
+			LineCnt++;
 		}
 
 		br.close();//열었던 br을 닫아주어 메모리 확보.

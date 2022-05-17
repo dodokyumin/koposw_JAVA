@@ -28,7 +28,6 @@ public class DBTest_p25_2print {
 
 			ResultSet rset = stmt.executeQuery(QueryTxt);
 			// 결과값을 저장할 수 있는 ResultSet형 rset인스턴스에 쿼리 실행문을 담은 stmt를 저장한다.
-
 			System.out.println("============================================="); //구분선 출력
 			System.out.printf("%4s%6s%3s%4s%4s%4s%6s\n", "학번", "이름", "국어", "영어", "수학", "합계", "평균");// 출력 포맷 안내
 
@@ -38,7 +37,6 @@ public class DBTest_p25_2print {
 						rset.getInt(4), rset.getInt(5), rset.getInt(6), rset.getDouble(7));
 				//rset의 getString메소드를 통해 순서대로, 각 row들의 결과값을 담은 데이터를 포맷에 맞게 출력한다.
 			}
-			
 			System.out.println("============================================="); //구분선 출력
 			System.out.println("현 페이지 값");//구분선 출력
 			
@@ -58,7 +56,6 @@ public class DBTest_p25_2print {
 				//해당 row의 값들을 현재 포맷에 맞게 getInt와 getDoule 메소드를 이용해 넣어주어 출력한다.
 				System.out.printf("    %12.2f %6.2f %6.2f %6.2f  %6.2f \n", rset2.getDouble(6), rset2.getDouble(7), rset2.getDouble(8), rset2.getDouble(9), rset2.getDouble(10));
 			}
-
 			System.out.println("전체 누적 값"); // 구분선 출력
 
 			if (i == 990) {	//30명씩 출력할 때 33번 즉, 990명까지 출력하면 남은 10명을 출력해야 하지만 i값이 한번 더 돌 때 1020번 까지 돌게되어 에러가 발생한다. 
@@ -72,19 +69,17 @@ public class DBTest_p25_2print {
 
 			ResultSet rset3 = stmt.executeQuery(QueryTxt);
 			// 결과값을 저장할 수 있는 ResultSet형 rset2를 만들어주어 세번째 값들도 쉽게 이용할 수 있도록 구조화.
-			
+	
 			while (rset3.next()) {
 				//만약 버퍼리더로 읽어온 라인을 저장한 readtxt가 null이 아니라면, 즉 값이 있다면,
 				System.out.printf("    %12d %6d %6d %6d  %4.2f \n", rset3.getInt(1), rset3.getInt(2), rset3.getInt(3),rset3.getInt(4), rset3.getDouble(5));
 				//해당 row의 값들을 현재 포맷에 맞게 getInt와 getDoule 메소드를 이용해 넣어주어 출력한다.
 				System.out.printf("    %12.2f %6.2f %6.2f %6.2f  %6.2f \n", rset3.getDouble(6), rset3.getDouble(7),rset3.getDouble(8), rset3.getDouble(9), rset3.getDouble(10));
 			}
-
 			rset.close(); //열었던 rset을 닫아주어 메모리 확보.
 			rset2.close();//열었던 rset2을 닫아주어 메모리 확보.
 			rset3.close();//열었던 rset3을 닫아주어 메모리 확보.
 		}
-		
 		stmt.close(); //열었던 stmt을 닫아주어 메모리 확보.
 		conn.close(); //열었던 conn을 닫아주어 메모리 확보.
 	}

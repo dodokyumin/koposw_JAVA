@@ -24,15 +24,15 @@ public class DBTest_p24 {
 		double lng = 127.1214038;//자신의 경도 값
 		
 		String QueryTxt;  //쿼리문을 읽어 담아둘 String변수 설정.
-		QueryTxt = String.format("select * from freewifi where " +
-					"SQRT( POWER( latitude-%f,2) + POWER (longitude-%f,2) ) = " +
-					"(select MIN( SQRT( POWER( latitude-%f,2) + POWER (longitude-%f,2 ) ) ) from freewifi);",
-					lat, lng, lat, lng);
+//		QueryTxt = String.format("select * from freewifi where " +
+//					"SQRT( POWER( latitude-%f,2) + POWER (longitude-%f,2) ) = " +
+//					"(select MIN( SQRT( POWER( latitude-%f,2) + POWER (longitude-%f,2 ) ) ) from freewifi);",
+//					lat, lng, lat, lng);
 		//(위도차의 제곱 + 경도차의 제곱)을 루트처리하여 현재 지점까지의 거리를 계산하고. mysql의 MIN메소드를 이용하여 최솟값을 출력.
 		//쿼리 실행문을 String.format에 담아 String변수에 저장한다.
 		
 //		QueryTxt = "select * from freewifi where service_provider = 'SKT'";
-//		QueryTxt = "select * from freewifi where inst_country = '수원시'";
+		QueryTxt = "select * from freewifi where inst_country = '수원시'";
 //		QueryTxt = "select * from freewifi";
 		
 		ResultSet rset = stmt.executeQuery(QueryTxt);

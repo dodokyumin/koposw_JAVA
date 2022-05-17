@@ -30,9 +30,9 @@ public class p10 {
 		int k44_rCnt = 0; //BufferedReader로 파일을 읽을 때마다 카운트를++ 하고, ++한 카운트를 저장할 변수를 생성한다.
 		int k44_wCnt = 0; //BufferedWriter로 파일을 쓸 때마다 카운트를++ 하고, ++한 카운트를 저장할 변수를 생성한다.
 		
-		File k44_f = new File("C:\\Users\\501-01\\Desktop\\day_data\\THTSKS010H00.dat");	//File 클래스의 인스턴스 f를 만들어 .dat파일을 불러온다.
+		File k44_f = new File("C:\\Users\\501-01\\Desktop\\실습csv\\day_data\\THTSKS010H00.dat");	//File 클래스의 인스턴스 f를 만들어 .dat파일을 불러온다.
 		BufferedReader k44_br = new BufferedReader(new FileReader(k44_f));	//인스턴스 f파일을 읽는 buffer인스턴스 br을 생성했다.
-		File k44_f1 = new File("C:\\Users\\501-01\\Desktop\\day_data\\StockDailyPrice.csv");	//File 클래스의 인스턴스 f를 만들어 .dat파일을 불러온다.
+		File k44_f1 = new File("C:\\Users\\501-01\\Desktop\\실습csv\\day_data\\StockDailyPrice.csv");	//File 클래스의 인스턴스 f를 만들어 .dat파일을 불러온다.
 		BufferedWriter k44_bw1 = new BufferedWriter(new FileWriter(k44_f1));	//인스턴스 f파일을 읽는 buffer인스턴스 br을 생성했다.
 		
 		String k44_readtxt;	//데이터를 읽어올때 해당 데이터 스트링을 담아줄 변수 설정
@@ -48,13 +48,14 @@ public class p10 {
 			if(k44_field.length > 2&&k44_field[2].replace("^", "").trim().substring(0, 1).equals("A")) {//항목 갯수가 2개가 넘으면서 동시에 해당 리스트를 정제한 값이 해당 문자열과 같을 때
 				k44_wCnt ++;
 				k44_s.append(k44_field[0].replace("^", "").trim()); //첫번째 칸에 0번 항목을 저장
-				for (int j=0; j<k44_field.length; j++) {
-					k44_s.append("."+k44_field[j].replace("^", "").trim());
+				for (int j=1; j<k44_field.length; j++) {
+					k44_s.append(","+k44_field[j].replace("^", "").trim());
 				}//쓸 스트링버퍼에 정제된 데이터를 append해주면서 설정
 				
 				k44_bw1.write(k44_s.toString()); //버퍼스트링을 스트링으로 변환해 파일에 쓰기
 				k44_bw1.newLine(); //줄바꿈
 				k44_wcnt++;
+				
 			}
 			k44_cnt++;
 		}

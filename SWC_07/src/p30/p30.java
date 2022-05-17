@@ -4,14 +4,14 @@ public class p30 extends Main01 {
 
 	public static void main(String[] args) {
 		
-		dataSet(); //데이터셋팅
-		HeaderPrint(); //헤더인쇄
+		k44_dataSet(); //데이터셋팅
+		k44_HeaderPrint(); //헤더인쇄
 		
-		for( int i=0; i<ArrayOneRec.size(); i++) {
-			ItemPrint(i);
+		for( int k44_i=0; k44_i<k44_ArrayOneRec.size(); k44_i++) {
+			k44_ItemPrint(k44_i);
 		}
 		
-		TailPrint();
+		k44_TailPrint();
 	}
 
 }
