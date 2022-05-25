@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBTest_p25_2insert {
+public class wifiReInsert {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//Class.forName()을 통해 드라이버를 로드한다.
 		
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.89:33060/koposw44", "root", "koposw44");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.89:33063/koposw44", "root", "koposw44");
 		//드라이버 매니저의 getConnection 메소드로 인자(mysql경로,id,pwd)를 보내어 DB에 연결한다.
 		//연결 완료한 설정을 인스턴스 conn에 담아 구조화 한다.
 		
@@ -20,11 +20,11 @@ public class DBTest_p25_2insert {
 		//conn의 createStatement 메소드를 Query 작업을 실행하기 위한 Statement형 인스턴스에 담아 정적인 쿼리를 처리할 수 있게 한다.
 		
 		int i = 1; //1000명까지 출력을 카운트해 줄 변수 i 설정.
-		while(i <= 1000) { //반복 횟수 총 1000번
+		while(i <= 30) { //반복 횟수 총 1000번
 			
 			String QueryTxt; //쿼리 명령문을 담아줄 String 변수 설정
 			
-			QueryTxt = String.format("insert into thousandReport ("
+			QueryTxt = String.format("insert into examtable ("
 					+ "studentid, name, kor, eng, mat)"
 					+ "values ("
 					+ "%s, '홍길%s', RAND()*101, RAND()*101, RAND()*101);",
